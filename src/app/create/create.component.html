@@ -1,0 +1,24 @@
+<div class="conatainer">
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" class="form-control" placeholder="name" aria-describedby="helpId" formControlName="name" [class.is-invalid]="Name.touched && Name.invalid">
+      <div *ngIf="Name.touched && Name.invalid">
+        <small class="text-danger" *ngIf="Name.hasError('required')">It should required</small>
+
+      </div>
+    </div>
+    .<div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" name="age" id="age" class="form-control" placeholder="age" aria-describedby="helpId" formControlName="age" [class.is-invalid]="Age.invalid && Age.touched">
+        <div *ngIf="Age.invalid && Age.touched">
+            <small *ngIf="Age.hasError('required')" class="text-danger">Age is required</small>
+
+        </div>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-success" [disabled]="!form.valid">submit</button>
+    </div>
+  
+</form>
+</div>

@@ -1,0 +1,18 @@
+<table class="table table-striped">
+<thead class="thead-light">
+    <tr>
+        <th scope="col">INdex</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col"></th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let r of objects;index as i "> 
+        <td scope="row">{{i}}</td>
+        <td scope="row">{{r.name}}</td>
+        <td scope="row">{{r.age}}</td>
+        <td scope="row"><button class="btn btn-danger" (click)="delete(i)">Delete</button></td>
+    </tr>
+</tbody>
+</table>
